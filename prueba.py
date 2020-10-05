@@ -31,5 +31,4 @@ def find_clusters(X, n_clusters, rseed=2):
 
 
 centers, labels = find_clusters(X, 4)
-plt.scatter(X[:, 0], X[:, 1], c=labels,
-            s=50, cmap='viridis')
+plt.scatter(X[:, 0], X[:, 1], c=labels, s=50, cmap='viridis')
