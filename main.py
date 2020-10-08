@@ -18,7 +18,9 @@ def crear_datos(n, d, k):
     """
     # puntosi = np.random.randint(1, 10, (10, 2))
     puntos = np.random.rand(n, d)
-    centroides = np.random.rand(k, d)
+    # centroides = np.random.rand(k, d)
+    labels = np.random.randint(low=0, high=len(puntos) - 1, size=k) # Se eligen k centroides random del vector puntos
+    centroides = puntos[labels]
 
     return puntos, centroides
 
@@ -69,12 +71,14 @@ def clusters(ptos, ctrds):
     while True:
         new_ctrds = []
 
+        # Asigna los centroides a los clusters.
         mat = asignar(ptos, ctrds)
 
         for i in range(len(ctrds)):
             aux = np.array(mat[i]).mean(0)
             new_ctrds.append(aux.tolist())
 
+        # Cuando no hay mas cambios en los centroides
         if np.all(ctrds == new_ctrds):
             break
 
