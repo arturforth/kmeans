@@ -72,7 +72,8 @@ def clusters(ptos, ctrds):
         mat = asignar(ptos, ctrds)
 
         for i in range(len(ctrds)):
-            new_ctrds.append(np.array(mat[i]).mean(0))
+            aux = np.array(mat[i]).mean(0)
+            new_ctrds.append(aux.tolist())
 
         if np.all(ctrds == new_ctrds):
             break
