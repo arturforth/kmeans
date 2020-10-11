@@ -19,7 +19,7 @@ def crear_datos(n, d, k):
     # puntosi = np.random.randint(1, 10, (10, 2))
     puntos = np.random.rand(n, d)
     # centroides = np.random.rand(k, d)
-    labels = np.random.randint(low=0, high=len(puntos) - 1, size=k) # Se eligen k centroides random del vector puntos
+    labels = np.random.randint(low=0, high=len(puntos) - 1, size=k)  # Se eligen k centroides random del vector puntos
     centroides = puntos[labels]
 
     return puntos, centroides
